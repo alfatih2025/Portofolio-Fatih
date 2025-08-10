@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio — Alfatih</title>
+  <meta name="description" content="Portofolio pribadi — desainer & developer" />  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: linear-gradient(90deg,#7c3aed,#06b6d4);
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent 8%),
+                  radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.06), transparent 8%),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      transition:background .6s ease;
+    }
+    .wrap{max-width:1100px;margin:48px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:var(--glass);display:grid;place-items:center;font-weight:700;color:var(--muted);box-shadow:0 6px 24px rgba(2,6,23,0.6);}
+    .brand h1{margin:0;font-size:18px;letter-spacing:0.2px}
+    nav{display:flex;gap:14px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;display:inline-block;transition:all .25s ease}
+    nav a:hover{color:#fff;transform:translateY(-3px);background:var(--glass-2)}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);}
+    .intro h2{margin:0;font-size:28px}
+    .intro p{color:var(--muted);margin-top:10px}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);background-size:200% 200%;color:white;box-shadow:0 8px 20px rgba(124,58,237,0.14);transition:all .35s cubic-bezier(.2,.9,.2,1)}
+    .btn-primary:hover{transform:translateY(-4px);filter:brightness(1.05)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .profile{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+    .photo{width:160px;height:160px;border-radius:16px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:grid;place-items:center;font-weight:700;font-size:26px;box-shadow:0 12px 30px rgba(6,11,23,0.6)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
+    .section{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){.wrap{padding:16px} .grid{grid-template-columns:1fr} .photo{width:140px;height:140px}}
+    .project{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);transition:transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s;cursor:pointer}
+    .project:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+    .project h3{margin:0 0 8px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .contact-form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit}
+    textarea{min-height:120px}
+    footer{margin-top:40px;color:var(--muted);text-align:center;padding:20px}
+    .fade-in{opacity:0;transform:translateY(10px);animation:fadeIn .7s forwards}
+    @keyframes fadeIn{to{opacity:1;transform:none}}
+    .floating{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:grid;place-items:center;box-shadow:0 12px 30px rgba(6,11,23,0.5);cursor:pointer}
+    .page-overlay{position:fixed;inset:0;background:linear-gradient(90deg, rgba(124,58,237,0.85), rgba(6,182,212,0.85));pointer-events:none;opacity:0;transition:opacity .45s ease;z-index:999}
+    .page-overlay.show{opacity:1;pointer-events:auto}
+    .muted{color:var(--muted)}
+    .flex{display:flex;align-items:center}
+    .space{height:16px}
+
+  </style></head>
+<body>
+  <div class="page-overlay" id="overlay" aria-hidden="true"></div>  <div class="wrap">
+    <header class="fade-in" style="animation-delay:.05s">
+      <div class="brand">
+        <div class="logo">HN</div>
+        <div>
+          <h1>Habibullah Naja Alfatih Wibowo</h1>
+          <div class="muted" style="font-size:13px">Embedded Systems Developer — Student</div>
+        </div>
+      </div><nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#" id="downloadCV">Download CV</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="card intro fade-in" style="animation-delay:.12s">
+      <h2>Halo Saya <span style="background:linear-gradient(90deg,#fff,rgba(255,255,255,0.85));-webkit-background-clip:text;background-clip:text;color:transparent"> Habibullah Naja Alfatih Wibowo</span></h2>
+      <p>Saya siswa SMK Teknik Elektronika Industri yang suka membuat proyek embedded dan web. Saya menggabungkan hardware & software untuk membuat solusi nyata. Di bawah ini beberapa proyek yang pernah saya kerjakan.</p>
+
+      <div class="cta">
+        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hubungi Saya</button>
+        <button class="btn btn-ghost" onclick="openSection('#projects')">Lihat Proyek</button>
+      </div>
+      <div class="space"></div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="flex:1">
+          <div class="muted" style="font-size:13px">Keahlian utama</div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <span class="chip">Arduino</span>
+            <span class="chip">C / C++</span>
+            <span class="chip">Embedded</span>
+            <span class="chip">HTML/CSS/JS</span>
+          </div>
+        </div>
+        <div style="width:120px;text-align:right;color:var(--muted);font-size:13px">Project Based</div>
+      </div>
+    </div>
+    <aside class="card profile fade-in" style="animation-delay:.18s">
+      <div class="photo">HN</div>
+      <div style="font-weight:700">Habibullah Naja Alfatih Wibowo</div>
+      <div class="muted">XI TE 4 — SMKN 1 Semarang</div>
+      <div class="skills">
+        <div class="chip">PCB</div>
+        <div class="chip">Sensor</div>
+        <div class="chip">ESP32</div>
+        <div class="chip">Arduino</div>
+      </div>
+    </aside>
+  </section>
+  <section id="projects" class="section">
+    <h2 style="margin:0 0 12px 0">Proyek</h2>
+    <div class="grid">
+      <!-- contoh proyek: ganti sesuai kebutuhan -->
+      <article class="project fade-in" style="animation-delay:.22s" onclick="openProject(1)">
+        <h3>OLED Face Animasi</h3>
+        <p class="muted">Membuat ekspresi lucu dan menarik dengan OLED</p>
+      </article>
+      <article class="project fade-in" style="animation-delay:.26s" onclick="openProject(2)">
+        <h3>Garage Car Doble Security</h3>
+        <p class="muted">RFID, servo,IR, dan sensor ultrasonik untuk otomatisasi pintu.</p>
+      </article>
+      <article class="project fade-in" style="animation-delay:.30s" onclick="openProject(3)">
+        <h3>Sistem Palang Parkir Otomatis</h3>
+        <p class="muted">Dengan Menggunakan Servo dan sensor ultrasonik HC-SR04.</p>
+      </article>
+      <article class="project fade-in" style="animation-delay:.38s" onclick="openProject(4)">
+        <h3>Distance Detection System</h3>
+        <p class="muted">Membaca jarak objek menggunakan Sensor HC-SR04 dan menampilkannya di LCD 16x2.</p>
+      </article>
+      <article class="project fade-in" style="animation-delay:.38s" onclick="openProject(5)">
+        <h3>Animated Portfolio Website</h3>
+        <p class="muted">Website ini: HTML, CSS, JavaScript, transisi halus.</p>
+      </article>
+      <article class="project fade-in" style="animation-delay:.38s" onclick="openProject(6)">
+        <h3>To-Do-List Website</h3>
+        <p class="muted">Website Untuk Manage jadwal anda </p>
+      </article>
+
+  <section id="about" class="section">
+    <h2>Tentang Saya</h2>
+    <div class="card" style="margin-top:10px">
+      <p class="muted">Saya belajar elektronika & pemrograman. Saya suka membuat prototipe, memperbaiki rangkaian, dan menulis kode. Saya percaya ide yang baik adalah gabungan antara logika dan estetika — seperti merakit mainan yang juga harus terlihat rapi.</p>
+      <div style="display:flex;gap:14px;margin-top:10px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <strong>Tools</strong>
+          <ul class="muted" style="margin:6px 0 0 18px">
+            <li>Arduino IDE / Visual Studio Code</li>
+            <li>Keil / STM32CubeIDE</li>
+            <li>TinkerCad / Wokwi</li>
+          </ul>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <strong>Pencapaian</strong>
+          <ul class="muted" style="margin:6px 0 0 18px">
+            <li>Mini Cours Data Analytics,RevoU,Semarang 2025</li>
+            <li>Coding Camp Software Engineering,RevoU,Semarang 2025</li>
+            <li>Bootcamp Programming Python,Special Skill,Semarang 2025</li>
+            <li>Bootcamp UI/UX Design,Special Skill,Semarang 2025</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Kontak</h2>
+    <div class="card" style="margin-top:10px">
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <input id="name" placeholder="Nama" required />
+        <input id="email" type="email" placeholder="Email" required />
+        <textarea id="message" placeholder="Pesan singkat" required></textarea>
+        <div style="display:flex;gap:12px">
+          <button class="btn btn-primary" type="submit">Kirim Pesan</button>
+          <button class="btn btn-ghost" type="button" onclick="openEmail()">Email Langsung</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+<footer>
+  © <span id="year"></span> Alfatih • 2025 — edit this file to personalize.
+</footer>
+  </div>  <div class="floating" title="Bantuan" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">✉</div>  <script>
+    // small helpers & interactions
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    function openSection(selector){
+      const el = document.querySelector(selector);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth'});
+    }
+
+    // Project click demo (ganti dengan modal atau link ke GitHub)
+    function openProject(i){
+      const projects = [
+        'OLED Face Animasi',
+        'Garage Car Doble Security',
+        'Sistem Palang Parkir Otomatis',
+        `Distance Detection System`,
+        'Animated Portfolio Website — single-file demo',
+        `To-Do-List Website`,
+      ];
+      alert(projects[i-1]);
+    }
+    // Smooth page exit transition when clicking external-ish links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        // local anchors handled normally
+      });
+    });
+    document.getElementById('downloadCV').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const overlay = document.getElementById('overlay');
+      overlay.classList.add('show');
+      setTimeout(()=>{
+        overlay.classList.remove('show');
+        alert('Fungsi download CV: tambahkan file PDF dan ubah handler ini.');
+      },700);
+    });
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('message').value;
+      alert('Terima kasih, ' + name + '! Pesan Anda telah (diproses) — demo.');
+      e.target.reset();
+    }
+    function openEmail(){
+      window.location.href = 'mailto:emailkamu@example.com?subject=Halo%20dari%20portofolio';
+    }
+    document.querySelectorAll('.fade-in').forEach((el, idx)=>{
+      el.style.animationDelay = (0.05 + idx*0.03) + 's';
+    });
+  </script></body>
+</html>
